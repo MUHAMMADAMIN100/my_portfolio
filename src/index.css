@@ -1,0 +1,27 @@
+@import "tailwindcss";
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background: radial-gradient(circle at 10% 20%, #0f172a, #020617);
+color:white;
+font-family: system-ui;
+overflow-x:hidden;
+}
+
+.gradient-text{
+background:linear-gradient(90deg,#a855f7,#6366f1);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.glass{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.1);
+}
+
+::selection{
+background:#a855f7;
+}
