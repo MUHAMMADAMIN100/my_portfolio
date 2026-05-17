@@ -1,43 +1,43 @@
 import { skills } from "../data/portfolioData"
-import { motion } from "framer-motion"
-import { Progress } from "antd"
+import SectionHeading from "./SectionHeading"
+import Reveal from "./Reveal"
+
+const groups = [
+  { key: "frontend", label: "Frontend", items: skills.frontend },
+  { key: "backend", label: "Backend", items: skills.backend },
+  { key: "tools", label: "Tools & Practices", items: skills.tools },
+]
 
 export default function Skills() {
+  return (
+    <section id="skills" className="mx-auto max-w-5xl px-6 py-24 md:py-32">
+      <SectionHeading
+        index="02"
+        title="Tech Stack"
+        subtitle="The technologies I use to build and ship full-stack applications."
+      />
 
-    const allSkills = Object.values(skills)
-        .filter(arr => Array.isArray(arr))
-        .flat()
-
-    return (
-        <section id="skills" className="py-32">
-            <h2 className="text-4xl font-bold text-center mb-16">Tech Stack</h2>
-
-            <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
-                {allSkills.map((skill, index) => {
-                    let percent = Math.floor(Math.random() * 30) + 65
-                    if (skill === "Node.js" || skill === "C#") {
-                        percent = Math.floor(Math.random() * 10) + 30
-                    }
-
-                    return (
-                        <motion.div
-                            key={skill + index}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5 }}
-                            className="bg-slate-900/60 backdrop-blur p-6 rounded-xl border border-slate-800 text-center"
-                        >
-                            <p className="mb-2 font-semibold">{skill}</p>
-                            <Progress
-                                percent={percent}
-                                status="active"
-                                format={(percent) => <span className="text-white">{percent}%</span>}
-                            />
-                        </motion.div>
-                    )
-                })}
+      <div className="space-y-px overflow-hidden rounded-2xl border border-white/10">
+        {groups.map((group, i) => (
+          <Reveal key={group.key} delay={i * 0.08}>
+            <div className="grid gap-4 bg-white/3 p-6 md:grid-cols-[180px_1fr] md:gap-8 md:p-8">
+              <h3 className="font-mono text-sm text-zinc-300">
+                <span className="text-accent">{`0${i + 1}`}</span> {group.label}
+              </h3>
+              <ul className="flex flex-wrap gap-2.5">
+                {group.items.map((item) => (
+                  <li
+                    key={item}
+                    className="rounded-lg border border-white/10 bg-zinc-900/60 px-3 py-1.5 font-mono text-sm text-zinc-300 transition-colors hover:border-accent/50 hover:text-white"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
-        </section>
-    )
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  )
 }

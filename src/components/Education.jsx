@@ -1,52 +1,30 @@
 import { education } from "../data/portfolioData"
-import { Card } from "antd"
-import { motion } from "framer-motion"
+import SectionHeading from "./SectionHeading"
+import Reveal from "./Reveal"
 
 export default function Education() {
+  return (
+    <section id="education" className="mx-auto max-w-5xl px-6 py-24 md:py-32">
+      <SectionHeading index="05" title="Education" />
 
-    return (
+      <Reveal>
+        <article className="rounded-2xl border border-white/10 bg-white/3 p-7 md:p-9">
+          <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+            <h3 className="text-xl font-semibold text-white">
+              {education.school}
+            </h3>
+            <span className="font-mono text-xs text-accent">
+              {education.date}
+            </span>
+          </div>
 
-        <section className="py-32">
+          <p className="mt-1 text-sm text-zinc-400">{education.location}</p>
 
-            <h2 className="text-4xl text-center font-bold mb-16">
-                Education
-            </h2>
-
-            <div className="max-w-4xl mx-auto">
-
-                <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
-                >
-
-                    <Card className="bg-slate-900 border-none">
-
-                        <h3 className="text-2xl mb-2">
-                            {education.school}
-                        </h3>
-
-                        <p className="text-gray-400 mb-2">
-                            {education.location}
-                        </p>
-
-                        <p className="text-gray-400 mb-4">
-                            {education.date}
-                        </p>
-
-                        <p className="text-gray-300">
-                            {education.description}
-                        </p>
-
-                    </Card>
-
-                </motion.div>
-
-            </div>
-
-        </section>
-
-    )
-
+          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-zinc-400">
+            {education.description}
+          </p>
+        </article>
+      </Reveal>
+    </section>
+  )
 }

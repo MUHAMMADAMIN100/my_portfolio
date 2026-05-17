@@ -1,178 +1,166 @@
 export const personal = {
     name: "Muhammadamin Turazoda",
-    role: "Frontend Developer",
+    firstName: "Muhammadamin",
+    lastName: "Turazoda",
+    role: "Full-Stack Developer",
     location: "Dushanbe, Tajikistan",
 
     email: "turazodamuhammadamin@gmail.com",
 
     phone: [
         "+992111131105",
-        "+992781777111"
+        "+992781777111",
     ],
 
     github: "https://github.com/MUHAMMADAMIN100",
 
-    summary: `
-Frontend Developer with experience in HTML, CSS, JavaScript,
-React and Next.js.
+    tagline:
+        "I build scalable, high-performance web applications end to end.",
 
-Focused on building scalable, responsive and high performance
-web applications.
-
-Basic backend experience with Node.js and C#, including
-REST API development and PostgreSQL databases.
-`
+    summary:
+        "Full-Stack Developer with hands-on experience across the modern web stack — from responsive React and Next.js interfaces to REST APIs and PostgreSQL databases with Node.js and C#. Focused on clean architecture, performance and a great user experience.",
 }
+
+export const highlights = [
+    {
+        title: "Frontend",
+        text: "Responsive, accessible interfaces with React, Next.js and TypeScript — built for performance.",
+    },
+    {
+        title: "Backend",
+        text: "REST APIs and relational data modeling with Node.js, C# and PostgreSQL.",
+    },
+    {
+        title: "Approach",
+        text: "Clean architecture, reusable components, SEO and measurable performance optimization.",
+    },
+]
+
 export const skills = {
-
-    languages: [
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "TypeScript",
-        "C#",
-        "Node.js"
-    ],
-
     frontend: [
         "React",
         "Next.js",
+        "TypeScript",
+        "JavaScript",
         "Redux Toolkit",
         "Zustand",
         "Jotai",
         "MobX",
-        "TanStack Query"
-    ],
-
-    ui: [
+        "TanStack Query",
+        "HTML5",
+        "CSS3",
+        "SASS",
         "TailwindCSS",
         "MUI",
         "Ant Design",
-        "SASS",
         "Chakra UI",
-        "shadcn/ui"
+        "shadcn/ui",
+    ],
+
+    backend: [
+        "Node.js",
+        "C#",
+        "REST API",
+        "PostgreSQL",
     ],
 
     tools: [
-        "REST API",
+        "Git",
         "React Hook Form",
         "Zod",
         "SEO Optimization",
-        "Responsive Design"
-    ]
-
+        "Responsive Design",
+    ],
 }
 
 export const experience = [
-
     {
-        title: "Frontend Developer",
-        location: "Dushanbe",
+        title: "Full-Stack Developer",
+        company: "Freelance / Projects",
+        location: "Dushanbe, Tajikistan",
+        period: "2025 — Present",
 
         tasks: [
-            "Develop SPA using React and Next.js",
-            "Responsive UI development",
-            "Integration with REST APIs",
-            "Performance optimization",
-            "SEO optimization",
-            "Team collaboration"
-        ]
-
-    }
-
-]
-
-export const education = {
-
-    school: "Softclub Academy",
-
-    location: "Dushanbe, Tajikistan",
-
-    date: "Feb 2025",
-
-    description: `
-
-Studied modern frontend development technologies
-including HTML, CSS, JavaScript, React and Next.js.
-
-Built several real-world projects demonstrating
-responsive design and modern web development practices.
-
-`
-
-}
-
-export const languages = [
-
-    { name: "Tajik", level: "Native" },
-    { name: "English", level: "Pre-Intermediate" },
-    { name: "Russian", level: "Basic" },
-    { name: "Arabic", level: "Basic" }
-
+            "Develop single-page applications using React and Next.js",
+            "Build responsive, accessible user interfaces",
+            "Design and integrate REST APIs",
+            "Model relational data with PostgreSQL",
+            "Optimize application performance and SEO",
+            "Collaborate within development teams",
+        ],
+    },
 ]
 
 export const projects = [
-
     {
         title: "Online Shop",
+        type: "Full-Stack E-commerce",
 
         stack: [
             "React",
             "TypeScript",
             "Node.js",
-            "PostgreSQL"
+            "PostgreSQL",
         ],
 
         description:
-            "Full-stack e-commerce web application",
+            "A full-stack e-commerce web application with a complete catalog, cart and order pipeline.",
 
         features: [
-
             "Product catalog",
-
             "Shopping cart",
-
             "Order management system",
-
             "REST API backend",
-
             "Responsive design",
-
-            "Performance optimization"
-
-        ]
-
+            "Performance optimization",
+        ],
     },
 
     {
         title: "Hospital System",
+        type: "Management Platform",
 
         stack: [
             "React",
             "C#",
             "PostgreSQL",
-            "JavaScript"
+            "JavaScript",
         ],
 
         description:
-            "Hospital management system",
+            "A hospital management system for handling patients, medical records and clinical data.",
 
         features: [
-
             "Patient management",
-
             "Medical records system",
-
             "CRUD operations",
-
             "Data filtering",
-
             "REST API backend",
+            "Responsive UI",
+        ],
+    },
+]
 
-            "Responsive UI"
+export const education = {
+    school: "Softclub Academy",
+    location: "Dushanbe, Tajikistan",
+    date: "Feb 2025",
 
-        ]
+    description:
+        "Studied modern frontend and full-stack development — HTML, CSS, JavaScript, React and Next.js — and built several real-world projects demonstrating responsive design and modern web development practices.",
+}
 
-    }
+export const languages = [
+    { name: "Tajik", level: "Native", score: 5 },
+    { name: "English", level: "Pre-Intermediate", score: 2 },
+    { name: "Russian", level: "Basic", score: 1 },
+    { name: "Arabic", level: "Basic", score: 1 },
+]
 
+export const navLinks = [
+    { label: "About", href: "#about" },
+    { label: "Skills", href: "#skills" },
+    { label: "Experience", href: "#experience" },
+    { label: "Projects", href: "#projects" },
+    { label: "Contact", href: "#contact" },
 ]

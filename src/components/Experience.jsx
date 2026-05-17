@@ -1,53 +1,47 @@
 import { experience } from "../data/portfolioData"
-import { motion } from "framer-motion"
+import SectionHeading from "./SectionHeading"
+import Reveal from "./Reveal"
 
 export default function Experience() {
+  return (
+    <section id="experience" className="mx-auto max-w-5xl px-6 py-24 md:py-32">
+      <SectionHeading
+        index="03"
+        title="Experience"
+        subtitle="Where I've applied my skills on real projects."
+      />
 
-    return (
+      <div className="relative border-l border-white/10 pl-8">
+        {experience.map((job, i) => (
+          <Reveal key={job.title + i} delay={i * 0.08}>
+            <article className="relative pb-2">
+              {/* timeline dot */}
+              <span className="absolute -left-[2.55rem] top-1.5 h-3 w-3 rounded-full border-2 border-accent bg-zinc-950" />
 
-        <section className="py-32">
+              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <h3 className="text-xl font-semibold text-white">{job.title}</h3>
+                <span className="font-mono text-xs text-accent">{job.period}</span>
+              </div>
 
-            <h2 className="text-4xl font-bold text-center mb-16">
-                Experience
-            </h2>
+              <p className="mt-1 text-sm text-zinc-400">
+                {job.company} · {job.location}
+              </p>
 
-            <div className="max-w-4xl mx-auto space-y-10">
-
-                {experience.map((exp, index) => (
-
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -40 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
-                        className="bg-slate-900 p-6 rounded-xl border border-slate-800"
-                    >
-
-                        <h3 className="text-2xl mb-2">
-                            {exp.title}
-                        </h3>
-
-                        <p className="text-gray-400 mb-4">
-                            {exp.location}
-                        </p>
-
-                        <ul className="list-disc pl-6 space-y-2 text-gray-300">
-
-                            {exp.tasks.map(task => (
-                                <li key={task}>{task}</li>
-                            ))}
-
-                        </ul>
-
-                    </motion.div>
-
+              <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
+                {job.tasks.map((task) => (
+                  <li
+                    key={task}
+                    className="flex gap-2.5 text-sm leading-relaxed text-zinc-400"
+                  >
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
+                    {task}
+                  </li>
                 ))}
-
-            </div>
-
-        </section>
-
-    )
-
+              </ul>
+            </article>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  )
 }
